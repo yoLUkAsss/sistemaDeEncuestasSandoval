@@ -12,6 +12,7 @@ Pusieron la encuesta en funcionamiento y despues de un tiempo nos pasaron feedba
 
 
 Lo que nos dijo el usuario:
+
 	1. Agregar mail a cada respuesta de la encuesta, ahora es anonimo y no sabemos cómo distinguir las respuestas
 
 	2. En las opciones de turnos dice “MANIANA” debería de decir “Mañana” (si, con ñ y solo la primer letra en mayúscula)
@@ -21,7 +22,9 @@ Lo que nos dijo el usuario:
 	4. No se están validando los campos obligatorios (carrera, año de ingreso y al menos una materia a la que se piensa anotar)
 
 El técnico que revisó el código nos dijo:
+
 	1. El modelo es pésimo:
+
 		a. Encuesta tiene atributos que sobran, responsabilidades que están solo por la pantalla, variables mal nombradas (carreraSeleccionada, etc) y malas elecciones en los tipos de datos
 		
 		b. Materia confunde el concepto de la materia en sí con la intención de inscripción a un turno ya que tiene turno pero solo tiene datos cuando la persona se quiere inscribir
@@ -31,6 +34,7 @@ El técnico que revisó el código nos dijo:
 		d. El modelo de GraciasPorResponderWindow carece de todo tipo de sentido
 
 	2. El uso del framework es pobre
+
 		a. El manejo que se hace para mostrar los datos en los selectores es absurdo y podrían aprovecharse los bindings y adapters que tiene el framework
 
 		b. Abrir una nueva ventana para dar una información desaprovecha las ventanas que ya vienen implementadas
@@ -39,7 +43,7 @@ El técnico que revisó el código nos dijo:
 
 		d. Se hace un mal manejo de bindings en cuanto a la lista de materias aprobadas que provoca que no se refresque la pantalla
 
-Se pide
+Se pide:
 
 	1. Crear al menos un proyecto que use arena y provea la funcionalidad (la actual y la pedida) buscada:
 		a. Ingresar a la vista que permita responder la encuesta indicando un mail (válido)
