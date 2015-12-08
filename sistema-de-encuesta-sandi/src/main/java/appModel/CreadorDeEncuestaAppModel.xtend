@@ -47,7 +47,7 @@ class CreadorDeEncuestaAppModel {
 	 * al turno elegidos.
 	 */
 	def agregarInscripcion() {
-		this.validarYAgregar(materiaSeleccionada,turnoSeleccionado)
+		this.validarYAgregar()
 	} 
 	
 	/**
@@ -95,9 +95,9 @@ class CreadorDeEncuestaAppModel {
 	 * @param nuevaMateriaAAgregar Materia elegida
 	 * @param turnoElegido Turno para la inscripcion
 	 */
-	def validarYAgregar(Materia nuevaMateriaAAgregar , Turno turnoElegido) {
+	def validarYAgregar() {
 		if (! camposDeNuevaInscripcionCorrectos) { throw new Exception("Aun quedan elementos sin completar") }
-		var nuevaInscripcion = new Inscripcion(nuevaMateriaAAgregar,turnoElegido)
+		var nuevaInscripcion = new Inscripcion(materiaSeleccionada,turnoSeleccionado)
 		if (inscripcionYaExiste(nuevaInscripcion)) { throw new Exception("No es posible inscribirse a una misma materia 2 veces") }
 		this.inscripcionesAlMomento.add(nuevaInscripcion)
 		firePropertyChanged(this,"inscripcionesAlMomento",inscripcionesAlMomento)
@@ -148,7 +148,7 @@ class CreadorDeEncuestaAppModel {
 	 * Se encarga de validar informacion sobre el año de ingreso ingresado al sistema
 	 */
 	def añoIngresoValido() {
-		return (anioIngreso != null && anioIngreso < 2015 && anioIngreso > 1900)
+		return (anioIngreso != null && anioIngreso <= 2015 && anioIngreso > 1900)
 				||
 			   (anioIngreso == null)
 	}

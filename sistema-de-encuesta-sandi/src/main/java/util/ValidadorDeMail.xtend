@@ -13,10 +13,11 @@ class ValidadorDeMail implements Validador{
 	/**
 	 * Dominios para correo precargados
 	 */
-	private List<String> dominiosAceptados = #[
-		"hotmail.com.ar","hotmail.com","live.ar","gmail.com"
-	].toList
+	private List<String> dominiosAceptados
 	
+	new() {
+		dominiosAceptados = newArrayList("hotmail.com.ar","hotmail.com","live.ar","gmail.com")
+	}
 	
 	/**
 	 * Se encarga de validar que un objeto sea (de carácter general) un correo electronico valido
@@ -39,6 +40,14 @@ class ValidadorDeMail implements Validador{
 		return false
 	}
 	
+	/**
+	 * Permite agregar nuevos dominios aceptados al validador.
+	 * 
+	 * @param nuevoDominio Dominio aceptado
+	 */
+	def agregarNuevoDominio(String nuevoDominio) {
+		dominiosAceptados.add(nuevoDominio)
+	}
 	
 	
 }
