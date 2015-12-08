@@ -46,7 +46,7 @@ class ValidadorDeMail implements Validador{
 	 * @param nuevoDominio Dominio aceptado
 	 */
 	def agregarNuevoDominio(String nuevoDominio) {
-		dominiosAceptados.add(nuevoDominio)
+		this.dominiosAceptados.add(nuevoDominio)
 	}
 	
 	

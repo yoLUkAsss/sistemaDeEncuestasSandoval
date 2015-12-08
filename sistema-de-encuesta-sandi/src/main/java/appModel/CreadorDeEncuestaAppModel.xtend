@@ -149,8 +149,6 @@ class CreadorDeEncuestaAppModel {
 	 */
 	def añoIngresoValido() {
 		return (anioIngreso != null && anioIngreso <= 2015 && anioIngreso > 1900)
-				||
-			   (anioIngreso == null)
 	}
 
 	/**
